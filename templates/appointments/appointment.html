@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Appointments{% endblock %}
+
+{% block content %}
+
+<h2>My Appointments</h2>
+
+{% for appointment in appointments %}
+
+<div>
+
+<h4>Dr. {{ appointment.doctor.first_name }} {{ appointment.doctor.last_name }}</h4>
+
+<p>Date: {{ appointment.appointment_date }}</p>
+
+<p>Time: {{ appointment.appointment_time }}</p>
+
+<p>Status: {{ appointment.status }}</p>
+
+<p>Reason: {{ appointment.reason }}</p>
+
+<hr>
+
+</div>
+
+{% empty %}
+
+<p>No appointments found.</p>
+
+<td class="p-3">
+
+    {% if appointment.status == "Pending" %}
+
+        <a
+            href="{% url 'cancel_appointment' appointment.id %}"
+            class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+
+            Cancel
+
+        </a>
+
+    {% else %}
+
+        <span class="text-gray-500">
+            Not Available
+        </span>
+
+    {% endif %}
+
+</td>
+
+{% endfor %}
+
+{% endblock %}

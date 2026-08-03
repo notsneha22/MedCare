@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}
+Book Appointment
+{% endblock %}
+
+{% block content %}
+
+<div class="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-8">
+
+    <h1 class="text-3xl font-bold mb-6 text-center">
+        Book an Appointment
+    </h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <div class="mb-5">
+
+            <label class="block font-semibold mb-2">
+                Doctor
+            </label>
+
+            {{ form.doctor }}
+
+        </div>
+
+        <div class="mb-5">
+
+            <label class="block font-semibold mb-2">
+                Appointment Date
+            </label>
+
+            {{ form.appointment_date }}
+
+        </div>
+
+        <div class="mb-5">
+
+            <label class="block font-semibold mb-2">
+                Appointment Time
+            </label>
+
+            {{ form.appointment_time }}
+
+        </div>
+
+        <div class="mb-5">
+
+            <label class="block font-semibold mb-2">
+                Reason for Visit
+            </label>
+
+            {{ form.reason }}
+
+        </div>
+
+        <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold">
+
+            Book Appointment
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+Billing
+{% endblock %}
+
+{% block content %}
+
+<h2>My Bills</h2>
+
+{% for bill in bills %}
+
+<div>
+
+<h3>Bill #{{ bill.id }}</h3>
+
+<p>Doctor : Dr. {{ bill.appointment.doctor.first_name }}</p>
+
+<p>Date : {{ bill.appointment.appointment_date }}</p>
+
+<p>Consultation Fee : ₹{{ bill.consultation_fee }}</p>
+
+<p>Medicine Charge : ₹{{ bill.medicine_charge }}</p>
+
+<p>Lab Charge : ₹{{ bill.lab_charge }}</p>
+
+<p><strong>Total : ₹{{ bill.total_amount }}</strong></p>
+
+<p>Status : {{ bill.payment_status }}</p>
+
+<hr>
+
+</div>
+
+{% empty %}
+
+<p>No bills available.</p>
+
+{% endfor %}
+
+{% endblock %}

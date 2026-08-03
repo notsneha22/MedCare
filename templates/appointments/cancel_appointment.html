@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cancel Appointment
+{% endblock %}
+
+{% block content %}
+
+<div class="max-w-lg mx-auto bg-white shadow-lg rounded-xl p-8 mt-10">
+
+    <h1 class="text-3xl font-bold text-red-600 mb-6">
+        Cancel Appointment
+    </h1>
+
+    <p class="text-gray-700 mb-2">
+        <strong>Doctor:</strong>
+        Dr. {{ appointment.doctor.first_name }} {{ appointment.doctor.last_name }}
+    </p>
+
+    <p class="text-gray-700 mb-2">
+        <strong>Date:</strong>
+        {{ appointment.appointment_date }}
+    </p>
+
+    <p class="text-gray-700 mb-6">
+        <strong>Time:</strong>
+        {{ appointment.appointment_time }}
+    </p>
+
+    <p class="text-lg mb-8">
+        Are you sure you want to cancel this appointment?
+    </p>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <div class="flex gap-4">
+
+            <button
+                type="submit"
+                class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg">
+
+                Yes, Cancel
+
+            </button>
+
+            <a
+                href="{% url 'appointment' %}"
+                class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg">
+
+                No, Go Back
+
+            </a>
+
+            <a href="{% url 'cancel_appointment' appointment.id %}"
+   class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
+    Cancel
+</a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

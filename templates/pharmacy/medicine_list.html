@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+Pharmacy
+{% endblock %}
+
+{% block content %}
+
+<h1>Pharmacy</h1>
+
+{% for medicine in medicines %}
+
+<div>
+
+<h3>{{ medicine.name }}</h3>
+
+<p>Manufacturer: {{ medicine.manufacturer }}</p>
+
+<p>Price: ₹{{ medicine.price }}</p>
+
+<p>Stock: {{ medicine.stock }}</p>
+
+<p>Expiry: {{ medicine.expiry_date }}</p>
+
+<hr>
+
+</div>
+
+{% empty %}
+
+<p>No medicines available.</p>
+
+{% endfor %}
+
+{% endblock %}

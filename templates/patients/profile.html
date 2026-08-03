@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+<h2>My Profile</h2>
+
+<p>Name: {{ patient.user.get_full_name }}</p>
+
+<p>Email: {{ patient.user.email }}</p>
+
+<p>Phone: {{ patient.phone }}</p>
+
+<p>Blood Group: {{ patient.blood_group }}</p>
+
+<p>Gender: {{ patient.gender }}</p>
+
+<p>Address: {{ patient.address }}</p>
+
+<a href="{% url 'edit_profile' %}">
+    Edit Profile
+</a>
+
+{% endblock %}

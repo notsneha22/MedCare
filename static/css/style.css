@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    color: black;
+    transition: 0.3s;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #2563eb;
+    color: white;
+}
+
+
+
+aside {
+    width: 220px;
+    background: #f3f3f3;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    padding: 20px;
+}
+
+
+main {
+    margin-left: 240px;
+    padding: 30px;
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2563eb;
+    color: white;
+}
+
+
+
+.dark {
+    background: #121212;
+    color: white;
+}
+
+.dark nav {
+    background: #1f2937;
+}
+
+.dark aside {
+    background: #222;
+}
+
+.dark footer {
+    background: #1f2937;
+}
+
+
+.search-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.search-section input,
+.search-section select {
+    padding: 12px;
+    flex: 1;
+}
+
+.search-section button {
+    padding: 12px 25px;
+}
+
+.doctor-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.doctor-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}

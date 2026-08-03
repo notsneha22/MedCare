@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="text-3xl font-bold mb-6">
+My Bills
+</h1>
+
+<table class="w-full bg-white rounded shadow">
+
+    <tr class="bg-gray-200">
+
+        <th class="p-3">Appointment</th>
+        <th class="p-3">Amount</th>
+        <th class="p-3">Status</th>
+        <th class="p-3">Action</th>
+
+    </tr>
+
+{% for bill in bills %}
+
+<tr>
+
+    <td class="p-3">
+        {{ bill.appointment }}
+    </td>
+
+    <td class="p-3">
+        ₹{{ bill.amount }}
+    </td>
+
+    <td class="p-3">
+
+        {{ bill.payment_status }}
+
+    </td>
+
+    <td class="p-3">
+
+{% if bill.payment_status == "Pending" %}
+
+<a
+href="{% url 'pay_bill' bill.id %}"
+class="bg-green-600 text-white px-4 py-2 rounded">
+
+Pay
+
+</a>
+
+{% else %}
+
+Paid
+
+{% endif %}
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

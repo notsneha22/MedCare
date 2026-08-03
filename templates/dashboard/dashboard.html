@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-800">
+        Welcome, {{ request.user.username }}
+    </h1>
+
+    <p class="text-gray-500 mt-2">
+        Manage your healthcare services from one place.
+    </p>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <a href="{% url 'doctor_list' %}" class="bg-blue-600 text-white rounded-xl p-6 shadow hover:scale-105 transition">
+
+        <div class="text-5xl mb-3">👨‍⚕️</div>
+
+        <h2 class="text-xl font-bold">
+            Doctors
+        </h2>
+
+        <p class="mt-2">
+            Browse doctors
+        </p>
+
+    </a>
+
+    <a href="{% url 'appointment' %}" class="bg-green-600 text-white rounded-xl p-6 shadow hover:scale-105 transition">
+
+        <div class="text-5xl mb-3">📅</div>
+
+        <h2 class="text-xl font-bold">
+            Appointments
+        </h2>
+
+        <p class="mt-2">
+            View appointments
+        </p>
+
+    </a>
+
+    <a href="{% url 'patient_profile' %}" class="bg-purple-600 text-white rounded-xl p-6 shadow hover:scale-105 transition">
+
+        <div class="text-5xl mb-3">👤</div>
+
+        <h2 class="text-xl font-bold">
+            Profile
+        </h2>
+
+        <p class="mt-2">
+            Manage profile
+        </p>
+
+    </a>
+
+    <a href="{% url 'billing' %}" class="bg-red-600 text-white rounded-xl p-6 shadow hover:scale-105 transition">
+
+        <div class="text-5xl mb-3">💳</div>
+
+        <h2 class="text-xl font-bold">
+            Billing
+        </h2>
+
+        <p class="mt-2">
+            View bills
+        </p>
+
+    </a>
+
+</div>
+
+<div class="grid md:grid-cols-2 gap-6 mt-8">
+
+    <a href="{% url 'report_list' %}" class="bg-white rounded-xl shadow p-6 hover:shadow-lg">
+
+        <h2 class="text-2xl font-bold mb-3">
+            📄 Prescriptions
+        </h2>
+
+        <p class="text-gray-600">
+            View uploaded prescriptions and reports.
+        </p>
+
+    </a>
+
+    <a href="{% url 'medicine_list' %}" class="bg-white rounded-xl shadow p-6 hover:shadow-lg">
+
+        <h2 class="text-2xl font-bold mb-3">
+            💊 Pharmacy
+        </h2>
+
+        <p class="text-gray-600">
+            Check medicines and pharmacy details.
+        </p>
+
+    </a>
+
+</div>
+
+{% endblock %}
