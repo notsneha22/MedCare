@@ -63,7 +63,7 @@ MedCare is a Hospital Management System built using **Django**. It allows patien
 - GitHub
 
 ---
-
+# 📂 Project Structure
 MedCare/
 │
 ├── accounts/
