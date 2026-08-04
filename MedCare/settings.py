@@ -31,7 +31,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 ALLOWED_HOSTS = ["127.0.0.1",
     "localhost",
-    "https://medcare-zlh0.onrender.com",
+    "medcare-zlh0.onrender.com",
     ]
 
 CSRF_TRUSTED_ORIGINS = [
